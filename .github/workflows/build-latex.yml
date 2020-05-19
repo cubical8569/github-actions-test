@@ -10,8 +10,9 @@ jobs:
         uses: dante-ev/latex-action@master
         with:
           root_file: main.tex
-      - name: List
-        run: ls
+          args: "-c"
+      # - name: List
+      #   run: ls
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
