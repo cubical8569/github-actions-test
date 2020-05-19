@@ -15,7 +15,7 @@ jobs:
       - name: Compile LaTeX document
         uses: Azatik1000/latex-action@master
         with:
-          root_file: main.tex
+          files: ${{steps.find_changed.outputs.changed_files}}
           args: "-c"
       - name: Commit results
         run: |
