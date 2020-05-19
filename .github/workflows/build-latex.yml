@@ -8,10 +8,7 @@ jobs:
         uses: actions/checkout@v1
       - name: Find changed tex files
         id: find_changed
-        run: | 
-          git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | tee
-          # git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -i -e '\.tex$'
-          # echo kek
+        run: |
           echo "::set-output name=changed_files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -i -e '\.tex$')"
       - name: List changed files
         run: echo ${{steps.find_changed.outputs.changed_files}}
