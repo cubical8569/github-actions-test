@@ -10,9 +10,9 @@ jobs:
         id: find_changed
         run: | 
           git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | tee
-          # git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -i -e '\\.tex$'
+          # git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -i -e '\.tex$'
           # echo kek
-          echo "::set-output name=changed_files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -i -e '\\.tex$')"
+          echo "::set-output name=changed_files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -i -e '\.tex$')"
       - name: List changed files
         run: echo ${{steps.find_changed.outputs.changed_files}}
       - name: Compile LaTeX document
