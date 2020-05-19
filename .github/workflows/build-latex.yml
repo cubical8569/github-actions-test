@@ -13,7 +13,7 @@ jobs:
       - name: List changed files
         run: echo ${{steps.find_changed.outputs.changed_files}}
       - name: Compile LaTeX document
-        uses: dante-ev/latex-action@master
+        uses: Azatik1000/latex-action@master
         with:
           root_file: main.tex
           args: "-c"
