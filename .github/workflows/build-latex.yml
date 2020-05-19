@@ -11,7 +11,7 @@ jobs:
           git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
           echo '::set-output name=changed_files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})'
       - name: List changed files
-        run: echo ${{steps.find.outputs.changed_files}}
+        run: echo ${{steps.find_changed_files.outputs.changed_files}}
       - name: Compile LaTeX document
         uses: dante-ev/latex-action@master
         with:
