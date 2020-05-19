@@ -19,6 +19,7 @@ jobs:
           args: "-c -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode"
       - name: Commit results
         run: |
+          ls -al
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git diff
