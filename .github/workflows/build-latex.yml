@@ -16,7 +16,7 @@ jobs:
         uses: Azatik1000/latex-action@master
         with:
           files: ${{steps.find_changed.outputs.changed_files}}
-          args: "-c -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode"
+          args: "-pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode"
       - name: Commit results
         run: |
           ls -al
