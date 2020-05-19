@@ -10,3 +10,5 @@ jobs:
         uses: dante-ev/latex-action@master
         with:
           root_file: main.tex
+      - name: List
+        run: ls
